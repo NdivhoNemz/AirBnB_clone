@@ -9,6 +9,7 @@
     width: 100%;
     border: 1px solid #dddddd;
     border-radius: 4px;
+    display: inline-block;
 }
 /* Search button style */
 .filters button{
@@ -29,18 +30,50 @@
 }
 
 /*locations and amenities*/
-.locations,
-.amenities {
+.filters .locations,
+.filters .amenities {
     display: inline-block;
+    position: relative;
     height: 100%;
     width: 25%;
 }
 /*locations*/
-.locations{
+.filters .locations {
     border-right: 1px solid #dddddd;
 }
+/*location Border */
+.filters .locations:hover,
+.filters .amenities:hover {
+ background-color: #fafafa;
+}
+/* Locations and amenities popover menu */
+.filters .popover {
+ background-color: #fafafa;
+ border: 1px solid #dddddd;
+ border-radius: 4px;
+ display: none;
+ position: absolute;
+ width: 100%;
+}
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover{
+    display: block;
+}
+.filters .locations ul{
+    padding: 6px 0 6px 0;
+    list-style-type: none;
+}
+.filters .amenities ul{
+    list-style-type: none;
+}
+.filters .locations li {
+    margin: 0 auto 12px 3em;
+}
+.filters .amenities li {
+    margin: 12px auto 12px 30px;
+}
 
-/* Places header */
+/* places header*/
 .filters h2,
 .filters h3,
 .filters h4 {
@@ -49,7 +82,11 @@
     box-sizing: border-box;
     margin: 0;
 }
-
+.filters h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px auto 0 30px;
+}
 /* Header 3 style */
 .filters h3 {
     font-size: 1.17em;
